@@ -1,7 +1,8 @@
 import {React, useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { GetExpenses } from '../services/expenses';
-import { Button, Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
 
 export default() =>
 {
@@ -15,7 +16,7 @@ export default() =>
     },
     []);
     return expenses.map(e=>
-        <div style={{marginBottom: '1rem'}}>
+        <div style={{}}>
             <ListRow expenses={e} />
         </div>
         );
