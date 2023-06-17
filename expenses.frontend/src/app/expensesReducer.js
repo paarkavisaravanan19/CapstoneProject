@@ -17,5 +17,7 @@ export default (state= initialState, action) => {
         case ActionTypes.SET_EXPENSES:
             //payload==> to dispatch the action
             return{...state, expenses:[...action.payload]};
+        default:
+            return state;
     }
 }
