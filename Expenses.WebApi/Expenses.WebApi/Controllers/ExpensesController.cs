@@ -1,3 +1,4 @@
+using Expenses.Core;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Expenses.WebApi.Controllers
@@ -6,28 +7,18 @@ namespace Expenses.WebApi.Controllers
     [Route("[controller]")]
     public class ExpensesController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
+        private IExpensesServices _expensesServices;
+        public ExpensesController(IExpensesServices expensesServices)
         {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
-
-        private readonly ILogger<ExpensesController> _logger;
-
-        public ExpensesController(ILogger<ExpensesController> logger)
+            //dependency injection
+            _expensesServices = expensesServices;
+        }
+        [HttpGet]
+        public IActionResult GetExpenses()
         {
-            _logger = logger;
+            return Ok(_expensesServices.GetExpenses());
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
-        {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
-        }
+        
     }
 }
