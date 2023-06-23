@@ -19,6 +19,14 @@ namespace Expenses.WebApi.Controllers
             return Ok(_expensesServices.GetExpenses());
         }
 
+        [HttpGet("{id}", Name = "GetExpense")]
+        public IActionResult GetExpense(int id)
+        {
+            return Ok(_expensesServices.GetExpense(id));
+        }
+
+
+
         
     }
 }
