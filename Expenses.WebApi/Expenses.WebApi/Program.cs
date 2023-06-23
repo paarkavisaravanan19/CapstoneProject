@@ -1,3 +1,4 @@
+using Expenses.Core;
 using Expenses.DB;
 
 namespace Expenses.WebApi
@@ -12,6 +13,7 @@ namespace Expenses.WebApi
 
             builder.Services.AddControllers();
             builder.Services.AddDbContext<AppDbContext>();
+            builder.Services.AddTransient<IExpensesServices, ExpensesServices>();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
