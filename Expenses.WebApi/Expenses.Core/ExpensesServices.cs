@@ -19,6 +19,13 @@ namespace Expenses.Core
 
             return expense;
         }
+
+        public void DeleteExpense(Expense expense)
+        {
+            _context.Expenses.Remove(expense);
+            _context.SaveChanges();
+        }
+
         //get expense using id
         public Expense GetExpense(int id)
         {
