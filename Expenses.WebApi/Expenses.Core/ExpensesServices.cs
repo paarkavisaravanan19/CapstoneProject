@@ -12,6 +12,12 @@ namespace Expenses.Core
             _context = context;
         }
 
+        public Expense GetExpense(int id)
+        {
+            //gets first id that gets matched
+            return _context.Expenses.First(e => e.Id == id);
+        }
+
         public List<Expense> GetExpenses()
         {
             return _context.Expenses.ToList();
