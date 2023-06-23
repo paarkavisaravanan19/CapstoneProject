@@ -8,6 +8,7 @@ namespace Expenses.Core
         private AppDbContext _context;
         public ExpensesServices(AppDbContext context)
         {
+            //dependency injection through instance of dbcontext
             _context = context;
         }
         public List<Expense> GetExpenses()
