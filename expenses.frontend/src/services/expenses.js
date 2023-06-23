@@ -1,15 +1,16 @@
 import {  ActionCreators } from "../app/expensesReducer";
+import axios from 'axios';
+
+const axiosInstance = axios.create({
+    baseURL: 'https://localhost:7157/Expenses',
+})
+
 export const GetExpenses = async (dispatch) => {
     try{
         //api call
-        const expenses = [
-            {id: 1, description :'Groceries', amount: 100},
-            {id: 2, description :'Gas', amount: 200},
-            {id: 3, description :'Student loans', amount: 100},
-            {id: 4, description :'shopping', amount: 300},
-        ];
-        //importing dispatch and setting the expenses
-        dispatch(ActionCreators.setExpenses(expenses));
+        const { data } = await axiosInstance.get();
+        //importing dispatch and setting data from api
+        dispatch(ActionCreators.setExpenses(data));
 
     } catch{
         console.log('Error!')

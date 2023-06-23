@@ -14,6 +14,14 @@ namespace Expenses.WebApi
             builder.Services.AddControllers();
             builder.Services.AddDbContext<AppDbContext>();
             builder.Services.AddTransient<IExpensesServices, ExpensesServices>();
+            builder.Services.AddCors(options=>
+            {
+                options.AddPolicy("ExpensesPolicy",
+                    builder =>
+                    {
+                        builder.WithOrigins("*").AllowAnyHeader().AllowAnyMethod();
+                    });
+            });
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
@@ -28,6 +36,7 @@ namespace Expenses.WebApi
             }
 
             app.UseHttpsRedirection();
+            app.UseCors("ExpensesPolicy");
 
             app.UseAuthorization();
 
