@@ -25,7 +25,7 @@ namespace Expenses.Core
             //gets first id that gets matched
             return _context.Expenses.First(e => e.Id == id);
         }
-
+        //get all expenses
         public List<Expense> GetExpenses()
         {
             return _context.Expenses.ToList();
