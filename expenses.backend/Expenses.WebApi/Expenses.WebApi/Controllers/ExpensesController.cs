@@ -6,17 +6,16 @@ namespace Expenses.WebApi.Controllers
     [Route("[controller]")]
     public class ExpensesController : ControllerBase
     {
-        
-
-        
-        public ExpensesController()
+        //to get instance, passing injection
+        private IExpensesServices _expensesServices;
+        public ExpensesController(IExpensesServices expensesServices)
         {
-            
+            _expensesServices = expensesServices;
         }
         [HttpGet]
         public IActionResult GetExpenses()
         {
-
+            return Ok(_expensesServices.GetExpenses());
         }
 
         
