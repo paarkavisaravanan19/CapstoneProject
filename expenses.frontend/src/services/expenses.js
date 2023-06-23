@@ -21,7 +21,8 @@ export const GetExpenses = async (dispatch) => {
 export const NewExpense = async (dispatch, expense) => {
     try{
         //api call
-        dispatch(ActionCreators.newExpense({id: 10, description: expense.description,amount: expense.amount}));
+        const {data} = await axiosInstance.post('',expense);
+        dispatch(ActionCreators.newExpense(data));
     } catch{
         console.log('Error!');
     }
@@ -32,6 +33,7 @@ export const EditExpense = async(dispatch, expense)=>
 {
     try{
         //api call
+        await axiosInstance.put('',expense);
         dispatch(ActionCreators.editExpense(expense));
     }catch{
         console.log('Error!');
@@ -43,6 +45,7 @@ export const DeleteExpense = async(dispatch, expense)=>
 {
     try{
         //api call
+        await axiosInstance.delete('',{data: {...expense}});
         dispatch(ActionCreators.deleteExpense(expense));
     }
     catch{
