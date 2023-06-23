@@ -40,6 +40,11 @@ namespace Expenses.WebApi.Controllers
             return Ok();
 
         }
+        [HttpPut]
+        public IActionResult EditExpense(Expense expense)
+        {
+            return Ok(_expensesServices.EditExpense(expense));
+        }
 
 
 
