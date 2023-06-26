@@ -1,4 +1,4 @@
-import {  ActionCreators } from "../app/expensesReducer";
+import {  setExpenses, newExpense, editExpense, deleteExpense } from "../app/expensesSlice";
 import axios from 'axios';
 
 const axiosInstance = axios.create({
@@ -10,7 +10,7 @@ export const GetExpenses = async (dispatch) => {
         //api call
         const { data } = await axiosInstance.get();
         //importing dispatch and setting data from api
-        dispatch(ActionCreators.setExpenses(data));
+        dispatch(setExpenses(data));
 
     } catch{
         console.log('Error!')
@@ -22,7 +22,7 @@ export const NewExpense = async (dispatch, expense) => {
     try{
         //api call
         const {data} = await axiosInstance.post('',expense);
-        dispatch(ActionCreators.newExpense(data));
+        dispatch(newExpense(data));
     } catch{
         console.log('Error!');
     }
@@ -34,7 +34,7 @@ export const EditExpense = async(dispatch, expense)=>
     try{
         //api call
         await axiosInstance.put('',expense);
-        dispatch(ActionCreators.editExpense(expense));
+        dispatch(editExpense(expense));
     }catch{
         console.log('Error!');
     }
@@ -46,7 +46,7 @@ export const DeleteExpense = async(dispatch, expense)=>
     try{
         //api call
         await axiosInstance.delete('',{data: {...expense}});
-        dispatch(ActionCreators.deleteExpense(expense));
+        dispatch(deleteExpense(expense));
     }
     catch{
         console.log('Error!');

@@ -9,7 +9,7 @@ export default() =>
 {
     //react hooks
     const dispatch = useDispatch();
-    const expenses = useSelector(state => state.expensesReducer.expenses);
+    const expenses = useSelector(state => state.expensesSlice.expenses);
     //non hooks
     useEffect(()=>
     {
