@@ -15,6 +15,7 @@ const ToastMiddleware = () => next => action =>{
         case deleteExpense.type:
             toast.success('Expense deleted successfully :> ');
             break;
+        //defining cases for error notification
         case setExpensesError.type:
             toast.error('Error loading expenses! :<');
             break;
