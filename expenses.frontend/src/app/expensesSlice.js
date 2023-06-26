@@ -1,4 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
+import { toast }  from 'react-toastify';
 
 export const expensesSlice = createSlice({
     name : 'expenses',
@@ -8,6 +9,7 @@ export const expensesSlice = createSlice({
     reducers:{
         //define the key and its context
         setExpenses: (state, action) => {
+            toast.success('this is a test');
             return  {...state, expenses:[...action.payload]};
         },
         newExpense: (state,action)=>{
