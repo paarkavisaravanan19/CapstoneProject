@@ -1,9 +1,11 @@
 using Expenses.Core;
 using Expenses.DB;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Expenses.WebApi.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class ExpensesController : ControllerBase

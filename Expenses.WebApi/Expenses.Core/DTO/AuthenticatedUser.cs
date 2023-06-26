@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Expenses.Core.DTO
 {
-    internal class AuthenticatedUser
+    public class AuthenticatedUser
     {
+        public string Token { get; set; }
+        public string UserName { get; set; }
+
     }
 }

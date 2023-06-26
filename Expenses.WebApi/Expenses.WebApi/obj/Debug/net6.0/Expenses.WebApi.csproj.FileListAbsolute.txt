@@ -81,3 +81,5 @@ C:\Users\DELL\Desktop\Capstone Project\Expenses\Expenses.WebApi\Expenses.WebApi\
 C:\Users\DELL\Desktop\Capstone Project\Expenses\Expenses.WebApi\Expenses.WebApi\bin\Debug\net6.0\Expenses.DB.pdb
 C:\Users\DELL\Desktop\Capstone Project\Expenses\Expenses.WebApi\Expenses.WebApi\bin\Debug\net6.0\Expenses.Core.dll
 C:\Users\DELL\Desktop\Capstone Project\Expenses\Expenses.WebApi\Expenses.WebApi\bin\Debug\net6.0\Expenses.Core.pdb
+C:\Users\DELL\Desktop\Capstone Project\Expenses\Expenses.WebApi\Expenses.WebApi\bin\Debug\net6.0\Microsoft.AspNet.Identity.Core.dll
+C:\Users\DELL\Desktop\Capstone Project\Expenses\Expenses.WebApi\Expenses.WebApi\bin\Debug\net6.0\Microsoft.Web.Services3.dll
