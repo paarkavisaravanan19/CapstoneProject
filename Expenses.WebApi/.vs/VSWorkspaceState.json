@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Expenses.Core",
+    "\\Expenses.DB",
+    "\\Expenses.WebApi",
+    "\\Expenses.WebApi\\Controllers"
+  ],
+  "SelectedNode": "\\Expenses.WebApi.sln",
+  "PreviewInSolutionExplorer": false
+}
