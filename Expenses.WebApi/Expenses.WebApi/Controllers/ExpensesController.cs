@@ -1,3 +1,4 @@
+
 using Expenses.Core;
 using Expenses.Core.DTO;
 using Microsoft.AspNetCore.Authorization;
@@ -36,14 +37,14 @@ namespace Expenses.WebApi.Controllers
         }
 
         [HttpDelete]
-        public IActionResult DeleteExpense(Expense expense)
+        public IActionResult DeleteExpense(CoreExpense expense)
         {
             _expensesServices.DeleteExpense(expense);
             return Ok();
 
         }
         [HttpPut]
-        public IActionResult EditExpense(Expense expense)
+        public IActionResult EditExpense(CoreExpense expense)
         {
             return Ok(_expensesServices.EditExpense(expense));
         }

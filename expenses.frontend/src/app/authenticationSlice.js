@@ -10,7 +10,7 @@ export const authenticationSlice = createSlice({
     reducers: {
         //authenticated user are being stored via token
         userAuthenticated : (state, action) => {
-            seesionStorage.setItem('token', action.payload.token);
+            sessionStorage.setItem('token', action.payload.token);
             return {
                 ...state, ...{
                     token: action.payload.token,

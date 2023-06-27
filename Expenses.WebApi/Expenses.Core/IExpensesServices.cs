@@ -10,10 +10,10 @@ namespace Expenses.Core
 {
     public interface IExpensesServices
     {
-        List<Expense> GetExpenses();
-        Expense GetExpense(int id);
-        Expense CreateExpense(DB.Expense expense);
-        void DeleteExpense(Expense expense);
-        Expense EditExpense(Expense expense);
+        List<CoreExpense> GetExpenses();
+        CoreExpense GetExpense(int id);
+        CoreExpense CreateExpense(DB.Expense expense);
+        void DeleteExpense(CoreExpense expense);
+        CoreExpense EditExpense(CoreExpense expense);
     }
 }

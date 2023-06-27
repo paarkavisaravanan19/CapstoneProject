@@ -17,16 +17,16 @@ namespace Expenses.Core
 
         }
         //creating expense
-        public Expense CreateExpense(DB.Expense expense)
+        public CoreExpense CreateExpense(DB.Expense expense)
         {
             expense.User = _user;
             _context.Add(expense);
             _context.SaveChanges();
 
-            return (Expense)expense;
+            return (CoreExpense)expense;
         }
 
-        public void DeleteExpense(Expense expense)
+        public void DeleteExpense(CoreExpense expense)
         {
             //to prevent someone's misaction with authorized token 
             var dbExpense = _context.Expenses.First(e => e.User.Id == _user.Id && e.Id == expense.Id);
@@ -34,7 +34,7 @@ namespace Expenses.Core
             _context.SaveChanges();
         }
 
-        public Expense EditExpense(Expense expense)
+        public CoreExpense EditExpense(CoreExpense expense)
         {
             var dbExpense = _context.Expenses.First(e => e.User.Id == _user.Id && e.Id == expense.Id);
             dbExpense.Description= expense.Description;
@@ -44,12 +44,15 @@ namespace Expenses.Core
         }
 
         //get expense using id
-        public Expense GetExpense(int id) =>
-            _context.Expenses.Where(e => e.User.Id == _user.Id && e.Id == id).Select(e => (Expense)e).First();
+        public CoreExpense GetExpense(int id) =>
+            _context.Expenses
+            .Where(e => e.User.Id == _user.Id && e.Id == id)
+            .Select(e => (CoreExpense)e)
+            .First();
         
         //get all expenses
-        public List<Expense> GetExpenses() =>
-            _context.Expenses.Where(e => e.User.Id == _user.Id).Select(e => (Expense)e).ToList();
+        public List<CoreExpense> GetExpenses() =>
+            _context.Expenses.Where(e => e.User.Id == _user.Id).Select(e => (CoreExpense)e).ToList();
 
     }
 }
