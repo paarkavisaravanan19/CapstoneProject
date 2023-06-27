@@ -1,4 +1,5 @@
 ﻿using Expenses.DB;
+using Microsoft.AspNetCore.Http;
 
 namespace Expenses.Core
 {
@@ -6,14 +7,18 @@ namespace Expenses.Core
     {
         //creating constructor
         private AppDbContext _context;
-        public ExpensesServices(AppDbContext context)
+        private readonly DB.User _user;
+        public ExpensesServices(AppDbContext context, IHttpContextAccessor httpContextAccessor)
         {
             //dependemcy injection used to show instance of dbcontext
             _context = context;
+            _user = _context.Users.First(u => u.Username == httpContextAccessor.HttpContext.User.Identity.Name);
+
         }
         //creating expense
-        public Expense CreateExpense(Expense expense)
+        public Expense CreateExpense(DB.Expense expense)
         {
+            expense.User = _user;
             _context.Add(expense);
             _context.SaveChanges();
 

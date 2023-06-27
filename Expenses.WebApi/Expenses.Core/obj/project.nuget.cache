@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "IW9FeHMI7sKjHAyPX+gH3uXV5oitNLol50jOxYJOWNEAEvAIHSJb0i4kT5XJCYHM1O7Tgr6IaHj79fa4M6Un+w==",
+  "dgSpecHash": "Ue2bPU3ORtQD/5Zb6aBo0scueI+5o9Hm/bEvlVkCXaHFkBJWBmInzrzhOpmyTN3PqSa9G2BH+v2aGb98P/uz2Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\DELL\\Desktop\\Capstone Project\\Expenses\\Expenses.WebApi\\Expenses.Core\\Expenses.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DELL\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.aspnet.identity.core\\2.2.3\\microsoft.aspnet.identity.core.2.2.3.nupkg.sha512",
+    "C:\\Users\\DELL\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\DELL\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.data.sqlclient\\5.0.2\\microsoft.data.sqlclient.5.0.2.nupkg.sha512",

@@ -48,6 +48,10 @@
               "target": "Package",
               "version": "[2.2.3, )"
             },
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.Web.Services3": {
               "target": "Package",
               "version": "[3.0.0, )"
