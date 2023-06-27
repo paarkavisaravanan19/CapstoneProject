@@ -1,4 +1,5 @@
-﻿using Expenses.DB;
+﻿
+using Expenses.Core.DTO;
 using Microsoft.AspNetCore.Http;
 
 namespace Expenses.Core
@@ -6,9 +7,9 @@ namespace Expenses.Core
     public class ExpensesServices : IExpensesServices
     {
         //creating constructor
-        private AppDbContext _context;
+        private DB.AppDbContext _context;
         private readonly DB.User _user;
-        public ExpensesServices(AppDbContext context, IHttpContextAccessor httpContextAccessor)
+        public ExpensesServices(DB.AppDbContext context, IHttpContextAccessor httpContextAccessor)
         {
             //dependemcy injection used to show instance of dbcontext
             _context = context;
@@ -22,12 +23,14 @@ namespace Expenses.Core
             _context.Add(expense);
             _context.SaveChanges();
 
-            return expense;
+            return (Expense)expense;
         }
 
         public void DeleteExpense(Expense expense)
         {
-            _context.Expenses.Remove(expense);
+            //to prevent someone's misaction with authorized token 
+            var dbExpense = _context.Expenses.First(e => e.User.Id == _user.Id && e.Id == expense.Id);
+            _context.Expenses.Remove(dbExpense);
             _context.SaveChanges();
         }
 
