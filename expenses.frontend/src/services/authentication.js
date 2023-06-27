@@ -10,7 +10,6 @@ export const SignUp = async (dispatch, crendentials)=>
 {
     try{
         const { data } = await axiosInstance.post('/signup', crendentials);
-        
         dispatch(userAuthenticated(data));
     }
     catch{
@@ -19,10 +18,8 @@ export const SignUp = async (dispatch, crendentials)=>
 }
 
 export const SignIn = async (dispatch, credentials) => {
-    console.log(credentials);
     try{
-        const {data} = await axios.post('/signin', credentials);
-        console.log(data);
+        const {data} = await axiosInstance.post('/signin', credentials);
         
         dispatch(userAuthenticated(data));
     }

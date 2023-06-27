@@ -19,7 +19,7 @@ const SignUpPage = () => {
                 SignUp( dispatch , {username, email, password});
             }
         }>
-            <h4 style={{textAlign: 'center'}}>Welcome back</h4>
+            <h4 style={{textAlign: 'center'}}>WELCOME</h4>
             <InputGroup className="mb-3">
                 <FormControl placeholder='Username' onChange={event => setUsername(event.target.value)}></FormControl>
             </InputGroup>

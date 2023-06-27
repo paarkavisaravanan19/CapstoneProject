@@ -1,5 +1,5 @@
-import ExpenseForm from "./components/ExpenseForm";
-import ExpenseList from "./components/ExpenseList";
+import ExpenseForm from "./ExpenseForm";
+import ExpenseList from "./ExpenseList";
 import { ToastContainer } from "react-toastify";
 
 const HomePage = () => (
