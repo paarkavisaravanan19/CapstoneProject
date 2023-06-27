@@ -36,23 +36,20 @@ namespace Expenses.Core
 
         public Expense EditExpense(Expense expense)
         {
-            var dbExpense = _context.Expenses.First(e => e.Id== expense.Id);
+            var dbExpense = _context.Expenses.First(e => e.User.Id == _user.Id && e.Id == expense.Id);
             dbExpense.Description= expense.Description;
             dbExpense.Amount = expense.Amount;
             _context.SaveChanges();
-            return dbExpense;
+            return expense;
         }
 
         //get expense using id
-        public Expense GetExpense(int id)
-        {
-            //gets first id that gets matched
-            return _context.Expenses.First(e => e.Id == id);
-        }
+        public Expense GetExpense(int id) =>
+            _context.Expenses.Where(e => e.User.Id == _user.Id && e.Id == id).Select(e => (Expense)e).First();
+        
         //get all expenses
-        public List<Expense> GetExpenses()
-        {
-            return _context.Expenses.ToList();
-        }
+        public List<Expense> GetExpenses() =>
+            _context.Expenses.Where(e => e.User.Id == _user.Id).Select(e => (Expense)e).ToList();
+
     }
 }

@@ -17,11 +17,13 @@ namespace Expenses.WebApi
 
             builder.Services.AddControllers();
             builder.Services.AddDbContext<AppDbContext>();
+
             builder.Services.AddTransient<IExpensesServices, ExpensesServices>();
 
             builder.Services.AddTransient<IUserService, UserService>();
 
             builder.Services.AddTransient<IPasswordHasher, PasswordHasher>();
+
             builder.Services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();    
             builder.Services.AddCors(options=>
             {
