@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import HomePage from "./components/HomePage";
 import { useEffect } from "react";
 import { userAuthenticated } from "./app/authenticationSlice";
+import Navbar  from "./components/Navbar";
 
 //visualizing the toast notification
 const App =() =>
@@ -12,6 +13,7 @@ const App =() =>
   const { isLoggedIn } = useSelector(state => state.authenticationSlice);
   const dispatch = useDispatch();
 
+//session storage for authorized user => to retain in the same page with getting expired
   useEffect(()=>
   {
     const token = sessionStorage.getItem('token');
@@ -24,6 +26,7 @@ const App =() =>
 
   //routing the pages based on condition
   return <BrowserRouter>
+  <Navbar/>
   <Switch>
     <Route exact path = '/' render={()=> (isLoggedIn? <HomePage /> : <SignInPage/>)}/>
     <Route path = '/signup' render={()=>(isLoggedIn? <Redirect to='/' /> : <SignUpPage/>)}/>
