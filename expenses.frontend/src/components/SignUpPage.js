@@ -11,6 +11,7 @@ const SignUpPage = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const dispatch = useDispatch();
 
+    
     return <div style={{width: '30rem', margin: 'auto',paddingTop:'8px'}}>
         <Form onSubmit={event=>
             {

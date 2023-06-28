@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {Nav, Button} from 'react-bootstrap';
 import {logout} from '../app/authenticationSlice';
 
+//navbar for routing
 const Navbar =() =>
 {
     const {isLoggedIn} = useSelector(state => state.authenticationSlice);
