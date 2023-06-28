@@ -8,6 +8,13 @@ const ExpenseForm = ({ expense, setIsEditing }) => {
     const [amount, setAmount] = useState(0);
     const [description, setDescription] = useState(descriptions[0]);
     const [isNewExpense, setIsNewExpense] = useState(true);
+        const user = {
+          id: 0,
+          username: '',
+          password: '',
+          email: '',
+        };
+    
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -24,10 +31,10 @@ const ExpenseForm = ({ expense, setIsEditing }) => {
         onSubmit={event => {
             event.preventDefault();
             if(isNewExpense) {
-                NewExpense(dispatch, {description: description, amount: Number(amount)});
+                NewExpense(dispatch, {description: description, amount: Number(amount), user: user});
             }
             else {
-                EditExpense(dispatch, {id: expense.id, description: description, amount: Number(amount)});
+                EditExpense(dispatch, {id: expense.id, description: description, amount: Number(amount), user: user});
                 setIsEditing(false);
             }
         }}
