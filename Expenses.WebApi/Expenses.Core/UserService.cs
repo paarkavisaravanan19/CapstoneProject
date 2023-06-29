@@ -23,11 +23,13 @@ namespace Expenses.Core
             _passwordHasher = passwordHasher;
         }
 
+        
+
         public async Task<AuthenticatedUser> SignIn(User user)
         {
             var dbUser = await _context.Users.FirstOrDefaultAsync(u => u.Username == user.Username);
 
-            if(dbUser == null || _passwordHasher.VerifyHashedPassword(dbUser.Password, user.Password) == PasswordVerificationResult.Failed)
+            if(dbUser == null || dbUser.Password == null || _passwordHasher.VerifyHashedPassword(dbUser.Password, user.Password) == PasswordVerificationResult.Failed)
             {
                 throw new InvalidUsernamePasswordException("Invalid UserName or password");
             }
@@ -47,8 +49,11 @@ namespace Expenses.Core
             {
                 throw new UsernameAlreadyExistException("Username already exists");
             }
-
-            user.Password= _passwordHasher.HashPassword(user.Password);
+            if(!string.IsNullOrEmpty(user.Password))
+            {
+                user.Password = _passwordHasher.HashPassword(user.Password);
+            }
+            
             await _context.AddAsync(user);
             await _context.SaveChangesAsync();
 
@@ -57,6 +62,19 @@ namespace Expenses.Core
                 UserName = user.Username,
                 Token = JwtGenerator.GenerateUserToken(user.Username)
             };
+        }
+
+        private string CreateUniqueUsernameFromEmail(string email)
+        {
+            var emailSplit = email.Split('@').First();
+            var random = new  Random();
+            var username = emailSplit;
+
+            while(_context.Users.Any(u=> u.Username.Equals(username)))
+            {
+                username = emailSplit + random.Next(1000000000);
+            }
+            return username;
         }
     }
 }

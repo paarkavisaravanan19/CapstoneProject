@@ -84,3 +84,8 @@ C:\Users\DELL\Desktop\Capstone Project\Expenses\Expenses.WebApi\Expenses.WebApi\
 C:\Users\DELL\Desktop\Capstone Project\Expenses\Expenses.WebApi\Expenses.WebApi\bin\Debug\net6.0\Microsoft.AspNet.Identity.Core.dll
 C:\Users\DELL\Desktop\Capstone Project\Expenses\Expenses.WebApi\Expenses.WebApi\bin\Debug\net6.0\Microsoft.Web.Services3.dll
 C:\Users\DELL\Desktop\Capstone Project\Expenses\Expenses.WebApi\Expenses.WebApi\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\DELL\Desktop\Capstone Project\Expenses\Expenses.WebApi\Expenses.WebApi\bin\Debug\net6.0\Google.Apis.dll
+C:\Users\DELL\Desktop\Capstone Project\Expenses\Expenses.WebApi\Expenses.WebApi\bin\Debug\net6.0\Google.Apis.Auth.PlatformServices.dll
+C:\Users\DELL\Desktop\Capstone Project\Expenses\Expenses.WebApi\Expenses.WebApi\bin\Debug\net6.0\Google.Apis.Auth.dll
+C:\Users\DELL\Desktop\Capstone Project\Expenses\Expenses.WebApi\Expenses.WebApi\bin\Debug\net6.0\Google.Apis.Core.dll
+C:\Users\DELL\Desktop\Capstone Project\Expenses\Expenses.WebApi\Expenses.WebApi\bin\Debug\net6.0\Newtonsoft.Json.dll

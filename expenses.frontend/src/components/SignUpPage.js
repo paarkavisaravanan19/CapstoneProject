@@ -3,7 +3,6 @@ import { Form, Button, FormControl,InputGroup } from "react-bootstrap";
 import { SignUp } from '../services/authentication';
 import {useDispatch}  from 'react-redux';
 
-
 const SignUpPage = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -11,7 +10,7 @@ const SignUpPage = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const dispatch = useDispatch();
 
-    
+
     return <div style={{width: '30rem', margin: 'auto',paddingTop:'8px'}}>
         <Form onSubmit={event=>
             {

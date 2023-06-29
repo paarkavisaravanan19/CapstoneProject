@@ -27,3 +27,15 @@ export const SignIn = async (dispatch, credentials) => {
         console.log('error');
     }
 }
+
+// export const ThirdPartySignIn= async (dispatch, token)=>
+// {
+//     try{
+//         //api call for success in thirdpartsignins
+//         const {data}= await axiosInstance.post(`/google?token=${token}`);
+//         dispatch(userAuthenticated(data));
+//     }
+//     catch{
+//         console.log('Error!');
+//     }
+// }
