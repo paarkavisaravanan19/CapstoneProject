@@ -6,6 +6,7 @@ import HomePage from "./components/HomePage";
 import { useEffect } from "react";
 import { userAuthenticated } from "./app/authenticationSlice";
 import Navbar  from "./components/Navbar";
+import StatisticsPage from "./components/StatisticsPage";
 
 //visualizing the toast notification
 const App =() =>
@@ -31,6 +32,7 @@ const App =() =>
     <Route exact path = '/' render={()=> (isLoggedIn? <HomePage /> : <SignInPage/>)}/>
     <Route path = '/signup' render={()=>(isLoggedIn? <Redirect to='/' /> : <SignUpPage/>)}/>
     <Route path = '/signin' render={()=>(isLoggedIn? <Redirect to='/' /> : <SignInPage/>)}/>
+    <Route path='/statistics' render={()=> (isLoggedIn? <StatisticsPage/>: <SignInPage/>)}/>
     <Route component={() => <h2>Page not found!</h2>}/>
   </Switch>
   </BrowserRouter>

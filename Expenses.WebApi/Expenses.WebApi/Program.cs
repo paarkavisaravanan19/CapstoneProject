@@ -22,6 +22,8 @@ namespace Expenses.WebApi
 
             builder.Services.AddTransient<IUserService, UserService>();
 
+            builder.Services.AddTransient<IStatisticsServices, StatisticsServices>();
+
             builder.Services.AddTransient<IPasswordHasher, PasswordHasher>();
 
             builder.Services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();    
