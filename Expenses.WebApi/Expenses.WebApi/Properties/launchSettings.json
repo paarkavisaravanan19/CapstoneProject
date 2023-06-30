@@ -18,7 +18,9 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "JWT_SECRET": "This is my super duper secret",
-        "JWT_ISSUER": "MyExpenses" }
+        "JWT_ISSUER": "MyExpenses"
+
+      }
     },
     "IIS Express": {
       "commandName": "IISExpress",

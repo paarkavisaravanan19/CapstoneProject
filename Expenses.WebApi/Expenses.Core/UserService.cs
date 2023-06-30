@@ -29,7 +29,7 @@ namespace Expenses.Core
         {
             var dbUser = await _context.Users.FirstOrDefaultAsync(u => u.Username == user.Username);
 
-            if(dbUser == null || dbUser.Password == null || _passwordHasher.VerifyHashedPassword(dbUser.Password, user.Password) == PasswordVerificationResult.Failed)
+            if(dbUser == null ||  _passwordHasher.VerifyHashedPassword(dbUser.Password, user.Password) == PasswordVerificationResult.Failed)
             {
                 throw new InvalidUsernamePasswordException("Invalid UserName or password");
             }
@@ -64,17 +64,6 @@ namespace Expenses.Core
             };
         }
 
-        private string CreateUniqueUsernameFromEmail(string email)
-        {
-            var emailSplit = email.Split('@').First();
-            var random = new  Random();
-            var username = emailSplit;
-
-            while(_context.Users.Any(u=> u.Username.Equals(username)))
-            {
-                username = emailSplit + random.Next(1000000000);
-            }
-            return username;
-        }
+        
     }
 }

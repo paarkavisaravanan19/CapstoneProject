@@ -4,6 +4,7 @@ import { SignIn } from '../services/authentication';
 import {useDispatch}  from 'react-redux';
 
 
+
 const SignInPage = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -26,7 +27,7 @@ const SignInPage = () => {
             <InputGroup className="mb-3">
                 <FormControl placeholder='Password' type='password' onChange={event => setPassword(event.target.value)}></FormControl>
             </InputGroup>
-            <Button type='submit' variant='primary' style={{margin:'auto', display:'block', width: '10rem'}}>
+            <Button type='submit' variant='primary' style={{ display:'block', width: '10rem'}}>
                 Sign In
             </Button>
         </Form>

@@ -28,11 +28,11 @@ export const SignIn = async (dispatch, credentials) => {
     }
 }
 
-// export const ThirdPartySignIn= async (dispatch, token)=>
+// export const ThirdPartySignIn= async (dispatch, credential)=>
 // {
 //     try{
 //         //api call for success in thirdpartsignins
-//         const {data}= await axiosInstance.post(`/google?token=${token}`);
+//         const {data}= await axiosInstance.post(`/google?token=${credential}`);
 //         dispatch(userAuthenticated(data));
 //     }
 //     catch{
