@@ -3,8 +3,6 @@ import { Form, Button, FormControl,InputGroup } from "react-bootstrap";
 import { SignIn } from '../services/authentication';
 import {useDispatch}  from 'react-redux';
 
-
-
 const SignInPage = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');

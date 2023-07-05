@@ -49,6 +49,17 @@ namespace Expenses.WebApi
                     });
             });
 
+
+
+            builder.Services.ConfigureSwaggerGen(setup =>
+            {
+                setup.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+                {
+                    Title = "Expenses",
+                    Version = "v1"
+                });
+            });
+
             var secret = Environment.GetEnvironmentVariable("JWT_SECRET");
             var issuer = Environment.GetEnvironmentVariable("JWT_ISSUER");
 
