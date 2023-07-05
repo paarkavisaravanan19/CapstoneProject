@@ -9,11 +9,11 @@ namespace Expenses.DB
 {
     public  class AppDbContext : DbContext
     {
+
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { 
+        }
         public DbSet<Expense> Expenses { get; set; }
         public DbSet<User> Users { get; set; }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(@"server=localhost;database=ExpensesDb; Integrated Security=true; MultipleActiveResultSets=true; TrustServerCertificate=true;");
-        }
+        
     }
 }

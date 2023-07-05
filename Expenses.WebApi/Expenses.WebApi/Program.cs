@@ -2,7 +2,10 @@ using Expenses.Core;
 using Expenses.DB;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.Extensions.DependencyInjection;
 using System.Text;
 
 namespace Expenses.WebApi
@@ -12,9 +15,19 @@ namespace Expenses.WebApi
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            var connectionString = builder.Configuration.GetConnectionString("DB_CONNECTION_STRING") ?? throw new InvalidOperationException("Connection string 'DB_CONNECTION_STRING' not found.");
 
+            builder.Services.AddDbContext<AppDbContext>(options =>
+ options.UseSqlServer(connectionString));
+
+            IServiceScopeFactory service = builder.Services.BuildServiceProvider().GetRequiredService<IServiceScopeFactory>();
+            using (var db = service.CreateScope().ServiceProvider.GetService<AppDbContext>())
+            {
+                db.Database.Migrate();
+            }
+
+            
             // Add services to the container.
-
             builder.Services.AddControllers();
             builder.Services.AddDbContext<AppDbContext>();
 
