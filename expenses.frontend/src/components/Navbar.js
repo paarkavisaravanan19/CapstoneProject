@@ -15,13 +15,13 @@ const Navbar =() =>
             isLoggedIn
             ?
             <div style={{display:'flex', alignItems:'center'}}>
-                <NavLink style={{marginLeft:'1rem'}} variant='link' to='/'>Home</NavLink> 
-                <NavLink style={{marginLeft:'1rem'}} variant='link' to='/statistics'>Statistics</NavLink>
-            <Button variant='link' href='/signin' onClick={()=> dispatch(logout())}>Log out</Button>
+                <NavLink style={{marginLeft:'1rem', fontFamily:'Times New Roman', fontSize: '25px'}} variant='link' to='/'>Home</NavLink> 
+                <NavLink style={{marginLeft:'1rem', fontFamily:'Times New Roman',fontSize: '25px'}} variant='link' to='/statistics'>Statistics</NavLink>
+            <Button variant='link' href='/signin' onClick={()=> dispatch(logout())} style={{fontFamily: 'Times New Roman', fontSize: '25px'}}>Logout</Button>
             </div>
             : <div style={{display: 'flex'}}>
-                <NavLink to='/signup'>Sign up</NavLink>
-                <NavLink to='/signin' style={{marginLeft:'1rem'}}>Sign in</NavLink>
+                <NavLink style={{fontFamily:'Times New Roman', fontSize: '25px'}} to='/signup'>Sign up</NavLink>
+                <NavLink to='/signin' style={{marginLeft:'1rem', fontFamily:'Times New Roman', fontSize: '25px'}}>Sign in</NavLink>
             </div>
         }
 

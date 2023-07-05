@@ -4,6 +4,7 @@ import { Chart } from 'react-chartjs-2';
 import { useDispatch, useSelector } from "react-redux";
 import { getExpensesPerCategory } from "../services/statistics";
 import { useEffect, useState } from "react";
+import image from '../images/statistics.jpg';
 
 const StatisticsPage = () =>
 {
@@ -81,9 +82,14 @@ const StatisticsPage = () =>
 
     return <div hidden={!expenseAmountPerCategory || !expenseAmountPerCategory.length}
     style={{maxWidth:'20rem',maxHeight:'20rem', margin:'auto', textAlign:'center'}}>
-        <h4 style={{marginTop:'10px'}}>EXPENSES PER CATEGORY</h4>
+        <h4 style={{marginTop:'10px', fontFamily: 'Times New Roman'}}>EXPENSES PER CATEGORY</h4>
         <Chart type='line' data={data} />
         <Doughnut data={data}/>
+        <div>
+        <img src={image} style={{height : "280px", width: "300px", position: 'absolute',
+right: '0px',
+bottom: '0px' }} alt="Description of the image" />
+        </div>
 
     </div>
 };

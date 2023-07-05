@@ -4,7 +4,7 @@ import { EditExpense, NewExpense, DeleteExpense } from '../services/expenses';
 import { useDispatch } from 'react-redux';
 
 const ExpenseForm = ({ expense, setIsEditing }) => {
-    const descriptions = ['Groceries', 'Credit Card', 'Student Loans', 'Eating out', 'Gas'];
+    const descriptions = ['Groceries', 'Credit Card', 'Student Loans', 'Eating out', 'Gas','Grocery','Jewels','Garments','Medicines','Others'];
     const [amount, setAmount] = useState(0);
     const [description, setDescription] = useState(descriptions[0]);
     const [isNewExpense, setIsNewExpense] = useState(true);
@@ -41,14 +41,14 @@ const ExpenseForm = ({ expense, setIsEditing }) => {
     >
         <Row>
             <Col>
-                <Form.Label>Description</Form.Label>
+                <Form.Label style={{fontFamily: 'Times New Roman'}}>Description</Form.Label>
                 <Form.Control as='select'
                     onChange={event => setDescription(event.target.value)}>
                     {descriptions.map((d, idx) => <option key={idx}>{d}</option>)}
                 </Form.Control>
             </Col>
             <Col>
-                <Form.Label>Amount</Form.Label>
+                <Form.Label style={{fontFamily: 'Times New Roman'}}>Amount</Form.Label>
                 <Form.Control type='number' step='0.01'
                     placeholder={amount}
                     onChange={event => setAmount(event.target.value)} />
