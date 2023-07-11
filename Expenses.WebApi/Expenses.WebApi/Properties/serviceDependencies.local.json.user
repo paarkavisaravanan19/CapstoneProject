@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "secrets1": {
+      "restored": true,
+      "restoreTime": "2023-07-07T07:25:10.0188628Z"
+    }
+  },
+  "parameters": {
+    "subscriptionId": {
+      "Name": "subscriptionId",
+      "Type": "subscription",
+      "Value": "e34397b2-486a-417d-bd5a-b9113a4a1b0c"
+    }
+  }
+}

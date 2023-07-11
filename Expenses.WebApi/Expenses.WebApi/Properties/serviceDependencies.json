@@ -3,10 +3,17 @@
     "apis1": {
       "type": "apis"
     },
+    "secrets1": {
+      "type": "secrets"
+    },
+    "mssql2": {
+      "ignored": "true",
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:DB_CONNECTION_STRING"
+    },
     "mssql1": {
       "type": "mssql",
-      "connectionId": "DB_CONNECTION_STRING",
-      "dynamicId": null
+      "connectionId": "DB_CONNECTION_STRING"
     }
   }
 }
